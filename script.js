@@ -1,4 +1,4 @@
- // script.js — полностью рабочий интернет-магазин с категориями Оптом и Розница
+// script.js — полностью рабочий интернет-магазин с категориями На заказ и Розница
 
 // ============================================================
 // 1. НАСТРОЙКИ
@@ -7,116 +7,18 @@
 const WHATSAPP_NUMBER = "996702573964";
 
 // ============================================================
-// 2. ДАННЫЕ ТОВАРОВ (с разделением на Оптом и Розница)
+// 2. ДАННЫЕ ТОВАРОВ (с разделением на На заказ и Розница)
 // ============================================================
 const products = [
-  // ОПТОМ (минимальный заказ от 100 шт., шаг +50)
+  // НА ЗАКАЗ (минимальный заказ от 100 шт., шаг +50)
   {
     id: 1,
-    name: "Бритвенный набор",
-    category: "Оптом",
-    price: 10,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://lalafo.kg/_next/image?url=https://img5.lalafo.com/i/posters/api/17/bb/0c/1e94aa0ce9f4f8f5201d92fc44.jpeg&w=384&q=75",
-  },
-  {
-    id: 2,
-    name: "Гигенический набор",
-    category: "Оптом",
-    price: 6,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://s.alicdn.com/@sc04/kf/Hfeb5fc38d1844706ba7b0834c29ef301f/Custom-Kraft-Paper-Box-Disposable-Cotton-Buds-Cotton-Pads-Makeup-Vanity-Kit-for-Hotel.jpg",
-  },
-  {
-    id: 3,
-    name: "Мыло 15гр",
-    category: "Оптом",
-    price: 10,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://www.china-soaps.com/wp-content/uploads/2026/07/RENSINO-Hotel-Amenities-Luxury-Supplies-Bars-Disposable-Soap-10g-15g-Mini-Round-Whitening-Bath-Toilet-Natural-Hotel-Soap.webp",
-  },
-  {
-    id: 6,
-    name: "Мыло 10гр",
-    category: "Оптом",
-    price: 7,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://image.made-in-china.com/2f0j00RCpkrfcGJboB/Hotel-Supplies-Hotel-Amenities-Hotel-Bath-Kit-Hotel-Amenities-Bathroom-Hotel-Bath-Set.webp",
-  },
-  {
-    id: 4,
-    name: "Зубной набор эконом",
-    category: "Оптом",
-    price: 9,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://static-01.daraz.com.bd/p/ca0e153b795a5bfc34e5f4364949dd47.jpg",
-  },
-  {
-    id: 5,
-    name: "Зубной набор стандарт",
-    category: "Оптом",
-    price: 12,
-    minOrder: 100,
-    step: 50,
-    image: "./surot1.jpg",
-  },
-
-  {
-    id: 7,
-    name: "Шампунь и гель для душа  30мл",
-    category: "Оптом",
-    price: 18,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://image.made-in-china.com/2f0j00aBCoOrSmEGbf/Wholesale-Body-Care-Moisturizer-White-Tea-Series-Shower-Gel-for-Hotel.webp",
-  },
-  {
-    id: 8,
-    name: "Шампунь и гель для душа 20мл ",
-    category: "Оптом",
-    price: 12,
-    minOrder: 100,
-    step: 50,
-    image: "https://frankfurt.apollo.olxcdn.com/v1/files/2autoq1xbux4-KZ/image",
-  },
-  {
-    id: 9,
-    name: "Шампунь и гель для душа стандарт 20мл",
-    category: "Оптом",
-    price: 14,
-    minOrder: 100,
-    step: 50,
-    image:
-      "https://img.alicdn.com/imgextra/i2/97891337/O1CN019Pg5RX1LkOcXQU7Rx_!!97891337.jpg",
-  },
-  {
-    id: 10,
-    name: "тапочки 6мм",
-    category: "Оптом",
-    price: 25,
-    minOrder: 100,
-    step: 50,
-    image: "./TOP.jpg",
-  },
-  {
-    id: 11,
-    name: "тапочки 4мм",
-    category: "Оптом",
-    price: 20,
-    minOrder: 100,
-    step: 50,
-    image: "./TOP2.jpg",
+    name: "не доступно",
+    category: "На заказ",
+    price: 0,
+    minOrder: 0,
+    step: 0,
+    image: "",
   },
 
   // РОЗНИЦА (минимальный заказ от 10 шт.)
@@ -126,7 +28,7 @@ const products = [
     category: "Розница",
     price: 10,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://lalafo.kg/_next/image?url=https://img5.lalafo.com/i/posters/api/17/bb/0c/1e94aa0ce9f4f8f5201d92fc44.jpeg&w=384&q=75",
   },
@@ -136,7 +38,7 @@ const products = [
     category: "Розница",
     price: 6,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://s.alicdn.com/@sc04/kf/Hfeb5fc38d1844706ba7b0834c29ef301f/Custom-Kraft-Paper-Box-Disposable-Cotton-Buds-Cotton-Pads-Makeup-Vanity-Kit-for-Hotel.jpg",
   },
@@ -146,7 +48,7 @@ const products = [
     category: "Розница",
     price: 10,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://www.china-soaps.com/wp-content/uploads/2026/07/RENSINO-Hotel-Amenities-Luxury-Supplies-Bars-Disposable-Soap-10g-15g-Mini-Round-Whitening-Bath-Toilet-Natural-Hotel-Soap.webp",
   },
@@ -156,7 +58,7 @@ const products = [
     category: "Розница",
     price: 7,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://image.made-in-china.com/2f0j00RCpkrfcGJboB/Hotel-Supplies-Hotel-Amenities-Hotel-Bath-Kit-Hotel-Amenities-Bathroom-Hotel-Bath-Set.webp",
   },
@@ -166,7 +68,7 @@ const products = [
     category: "Розница",
     price: 9,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://static-01.daraz.com.bd/p/ca0e153b795a5bfc34e5f4364949dd47.jpg",
   },
@@ -176,7 +78,7 @@ const products = [
     category: "Розница",
     price: 12,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image: "./surot1.jpg",
   },
 
@@ -186,7 +88,7 @@ const products = [
     category: "Розница",
     price: 18,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://image.made-in-china.com/2f0j00aBCoOrSmEGbf/Wholesale-Body-Care-Moisturizer-White-Tea-Series-Shower-Gel-for-Hotel.webp",
   },
@@ -196,7 +98,7 @@ const products = [
     category: "Розница",
     price: 12,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image: "https://frankfurt.apollo.olxcdn.com/v1/files/2autoq1xbux4-KZ/image",
   },
   {
@@ -205,7 +107,7 @@ const products = [
     category: "Розница",
     price: 14,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image:
       "https://img.alicdn.com/imgextra/i2/97891337/O1CN019Pg5RX1LkOcXQU7Rx_!!97891337.jpg",
   },
@@ -215,7 +117,7 @@ const products = [
     category: "Розница",
     price: 25,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image: "./TOP.jpg",
   },
   {
@@ -224,7 +126,7 @@ const products = [
     category: "Розница",
     price: 20,
     minOrder: 10,
-    step: 1,
+    step: 5,
     image: "./TOP2.jpg",
   },
 ];
@@ -398,7 +300,6 @@ function addToCart(productId, qty) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
 
-  // Проверка минимального заказа
   if (qty < product.minOrder) {
     showToast(
       `Минимальный заказ для этого товара: ${product.minOrder} шт.`,
@@ -425,7 +326,6 @@ function changeQty(productId, delta) {
   const product = products.find((p) => p.id === productId);
   let newQty = item.qty + delta;
 
-  // Не позволяем уменьшить меньше минимального заказа
   if (newQty < product.minOrder) return;
 
   item.qty = newQty;
@@ -458,7 +358,7 @@ function saveCart() {
 }
 
 // ============================================================
-// 7. МОДАЛЬНОЕ ОКНО КОЛИЧЕСТВА
+// 7. МОДАЛЬНОЕ ОКНО КОЛИЧЕСТВА (только кнопки + и -)
 // ============================================================
 function openModal(productId) {
   const product = products.find((p) => p.id === productId);
@@ -466,7 +366,7 @@ function openModal(productId) {
   currentProductId = productId;
   modalProductName.textContent = product.name;
   modalProductPrice.textContent = `${product.price} сом / шт.`;
-  modalMinInfo.textContent = `Мин. заказ: ${product.minOrder} шт.${product.category === "Оптом" ? " (шаг +50)" : ""}`;
+  modalMinInfo.textContent = `Мин. заказ: ${product.minOrder} шт.${product.category === "На заказ" ? " (шаг +50)" : ""}`;
   qtyInput.value = product.minOrder;
   qtyInput.min = product.minOrder;
   qtyInput.step = product.step || 1;
@@ -484,17 +384,6 @@ modalAddToCart.addEventListener("click", () => {
   if (!product) return;
 
   let qty = parseInt(qtyInput.value) || product.minOrder;
-
-  // Для оптовых товаров проверяем кратность шагу
-  if (product.category === "Оптом") {
-    if ((qty - product.minOrder) % product.step !== 0) {
-      showToast(
-        `Для оптовых заказов количество должно быть кратно ${product.step} (мин. ${product.minOrder})`,
-        "fa-exclamation-circle",
-      );
-      return;
-    }
-  }
 
   if (qty < product.minOrder) {
     showToast(
@@ -520,6 +409,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// Кнопки + и - работают с шагом
 qtyDec.addEventListener("click", () => {
   const product = products.find((p) => p.id === currentProductId);
   if (!product) return;
@@ -540,11 +430,21 @@ qtyInc.addEventListener("click", () => {
   qtyInput.value = val + step;
 });
 
-qtyInput.addEventListener("change", () => {
+// Блокируем любые попытки ввода с клавиатуры
+qtyInput.addEventListener("keydown", (e) => {
+  e.preventDefault();
+});
+
+qtyInput.addEventListener("keyup", (e) => {
+  e.preventDefault();
+});
+
+qtyInput.addEventListener("input", (e) => {
+  // Возвращаем предыдущее значение
   const product = products.find((p) => p.id === currentProductId);
-  if (!product) return;
-  let val = parseInt(qtyInput.value) || product.minOrder;
-  if (val < product.minOrder) qtyInput.value = product.minOrder;
+  if (product) {
+    qtyInput.value = product.minOrder;
+  }
 });
 
 // ============================================================
