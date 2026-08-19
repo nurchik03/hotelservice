@@ -933,6 +933,7 @@ body {
 }
 .modal h3 { font-size: 22px; margin-bottom: 4px; }
 .modal-price { font-size: 18px; color: #2a7f6e; font-weight: 600; margin-bottom: 20px; }
+
 .modal-quantity {
   display: flex;
   align-items: center;
@@ -949,6 +950,7 @@ body {
   font-size: 24px;
   cursor: pointer;
   transition: background 0.15s;
+  user-select: none;
 }
 .modal-quantity .qty-btn:hover { background: #f0f4f6; }
 .modal-quantity input {
@@ -960,8 +962,16 @@ body {
   border: 1px solid #dce4e8;
   border-radius: 12px;
   background: #fafcfc;
+  cursor: default;
+  -moz-appearance: textfield;
 }
-.modal-quantity input:focus { outline: none; border-color: #2a7f6e; }
+.modal-quantity input::-webkit-outer-spin-button,
+.modal-quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal-quantity input:focus { outline: none; border-color: #dce4e8; }
+
 .modal-actions { display: flex; flex-direction: column; gap: 10px; }
 
 /* FORM */
