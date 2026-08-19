@@ -68,7 +68,7 @@ const products = [
     price: 12,
     minOrder: 100,
     step: 50,
-    image: "/image/surot1.jpg",
+    image: "./surot1.jpg",
   },
 
   {
@@ -107,7 +107,7 @@ const products = [
     price: 25,
     minOrder: 100,
     step: 50,
-    image: "/TOP.jpg",
+    image: "./TOP.jpg",
   },
   {
     id: 11,
@@ -116,7 +116,7 @@ const products = [
     price: 25,
     minOrder: 100,
     step: 50,
-    image: "/TOP2.jpg",
+    image: "./TOP2.jpg",
   },
 
   // РОЗНИЦА (минимальный заказ от 10 шт.)
@@ -177,7 +177,7 @@ const products = [
     price: 12,
     minOrder: 10,
     step: 1,
-    image: "/surot1.jpg",
+    image: "./surot1.jpg",
   },
 
   {
@@ -216,7 +216,7 @@ const products = [
     price: 25,
     minOrder: 10,
     step: 1,
-    image: "TOP.jpg",
+    image: "./TOP.jpg",
   },
   {
     id: 22,
@@ -225,7 +225,7 @@ const products = [
     price: 25,
     minOrder: 10,
     step: 1,
-    image: "TOP2.jpg",
+    image: "./TOP2.jpg",
   },
 ];
 
